@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --dark: #19191B;
+            --gray: #696871;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Roboto;
+            background: #F4EDDD;
+        }
+        main{
+            margin-top: 100px;
+        }
+        .header{
+            padding: 30px 0;
+            background-color: #FAF7F0;
+            position: fixed;
+            width: 100%;
+            z-index: 999;
+            top: 0;
+        }
+        .div-1, .div-2{
+            max-width: 1200px;
+            margin: auto;
+        }
+        .nav-1{
+            display: flex;
+            justify-content: flex-end ;
+            align-items: center;
+        }
+        .ul-1{
+            display: flex;
+            list-style: none;
+            gap: 49px;
+        }
+        ul{
+            list-style: none;
+        }
+        .li-1 a{
+            font-weight: 700;
+            color: var(--dark) ;
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+        .li-1 a:hover{
+        transform: scale(1.15);
+        color: var(--gray);
+        }
+        .section-1{
+            padding-block: 70px;
+        }
+        .div-2-kart{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 500px;
+        }
+        .div-2{
+            position: relative;
+        }
+        .h-title{
+            font-weight: 700;
+            font-size: 80px;
+            letter-spacing: -2.5px;
+            line-height: 77px;
+            color: var(--dark);
+        }
+        .p-desc{
+            font-family: Mulish;
+            font-size: 20px;
+            letter-spacing: -0.63px;
+            line-height: 30px;
+            color: var(--gray);
+            margin-top: 30px;
+        }
+        .button{
+            font-weight: 700;
+            font-size: 17px;
+            letter-spacing: -o.53px;
+            color: white;
+            padding: 19px 59px;
+            background-color: #FFA500;
+            border-radius: 10px;
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+        .button:hover{
+            transform: scale(1.15);
+        }
+        .div-2-buttons{
+            margin-top: 50px;
+            display: flex;
+            gap: 40px;
+        }
+        .scroll{
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #E7E7E7;
+            border-radius: 100px;  
+            background: white;
+        }
+        .div-2-content{
+            max-width: 423px;
+        }
+        .anim{
+            overflow: hidden;
+            width: 100%;
+            background-color: white;
+            padding: 20px 0;
+        }
+
+        .anim-1{
+            display: flex;
+            gap: 40px;
+            width: max-content;
+            animation: scroll-left 20s linear infinite;
+        }
+
+        .anim-li{
+            white-space: nowrap;
+            color: #FFA500;
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        @keyframes scroll-left{
+            from{ transform: translateX(0); }
+            to{ transform: translateX(-50%); }
+        }
+        .anim:hover .anim-1{
+        animation-play-state: paused;
+        }
+        .anim-li{
+        display: inline-block;
+        transition: transform 0.2s ease, color 0.2s ease;
+        }
+        .anim-li:hover{
+            transform: scale(1.15);
+            color: #19191B;
+        }
+        .hop{
+            font-size: 80px;
+            color: #FFA500;
+            font-weight: 700;
+            letter-spacing: -2.5px;
+        }
+        .title-2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .img-2{
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+        .grid-columns{
+            max-width: 300px;
+            background-color: white;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            overflow: hidden;
+        }
+        .p-2{
+            font-family: Mulish;
+            color: var(--gray);
+            font-size: 13px;
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(3, 300px);
+            justify-content: space-between;
+            align-items: start;
+            margin-top: 40px;
+            gap: 40px;
+            padding: 0 60px;
+        }
+        .title-3, .p-2{
+            padding: 0 16px 16px;
+        }
+        .title-3{
+            color: #FFA500;
+        }
+        .title-footer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+        }
+        .tit{
+            font-family: Mulish;
+            color: var(--gray);
+            font-size: 20px;
+            letter-spacing: -1px;
+        }
+        .memchiki{
+            display: flex;
+            gap: 200px;
+            justify-content: center;
+            align-items: center;          
+        }
+        .memchiki-1,
+        .memchiki-2{
+            display: flex; 
+            flex-direction: column;   
+            gap: 12px;              
+        }
+        .mem{
+            font-family: mulish;
+            color: var(--gray);
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+        .mem:hover{
+        transform: scale(1.15);
+        color: white;
+        }
+        .bog{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5px;
+        }
+        .bogi{
+            margin-top: 20px;
+        }
+        .bog-01{
+            font-family: mulish;
+            color: var(--gray);
+
+        }
+        footer{
+            background-color: #19191B;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+            <div class="div-1">
+                <nav class="nav-1">
+                    <ul class="ul-1">
+                        <li class="li-1 active">
+                            <a href="#">Главное</a>
+                        </li>
+                        <li class="li-1">
+                            <a href="#">Эпохи</a>
+                        </li>
+                        <li class="li-1">
+                            <a href="#">Поиск</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+    </header>
+    <main>
+        <section class="section-1">
+            <div class="div-2">
+                <div class="div-2-content">
+                    <div class="div-2-text">
+                        <h1 class="h-title">
+                            Легендарные политики в истории
+                        </h1>
+                        <p class="p-desc">
+                            Тут есть не только легендарные политики но и мемные.То есть будет деление между мемными и истоическими в некоторых 2 сразу. Здесь можно провести хорошее время
+                        </p>
+                    </div>
+                    <div class="div-2-buttons">
+                        <a class="button" href="/">Начачть Поиск</a>
+                        <a class="scroll" href="#peoples"><img src="img/icons8-шеврон-вниз-323.png" alt=""></a>
+                    </div>
+                    <img class="div-2-kart" src="img/images-removebg-preview.png" alt="">
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="anim">
+                <div class="anim-1">
+                    <a class="anim-li" href="/">Древний мир</a>
+                    <a class="anim-li" href="/">Средневековье</a>
+                    <a class="anim-li" href="/">Новое время</a>
+                    <a class="anim-li" href="/">ХХ век</a>
+                    <a class="anim-li" href="/">Современности</a>
+                    <a class="anim-li" href="/">Древний мир</a>
+                    <a class="anim-li" href="/">Средневековье</a>
+                    <a class="anim-li" href="/">Новое время</a>
+                    <a class="anim-li" href="/">XX век</a>
+                    <a class="anim-li" href="/">Современность</a>
+                </div>
+            </div>
+        </section>
+        <section class="peoples" id="peoples">
+            <div class="title-2">
+                <h1 class="hop">
+                    Люди недели
+                </h1>
+            </div>
+            <div class="grid">
+                <div class="grid-columns">
+                    <div class="img-1">
+                        <img  class="img-2" src="img/icons8-шеврон-вниз-32.png" alt="">
+                    </div>
+                    <div class="title-3">
+                        <h1 class="h1-1">
+                            Алексей навальный
+                        </h1>
+                    </div>
+                    <div class="desc-1">    
+                        <p class="p-2">
+                          Российский оппозиционер и главный разоблачитель коррупции, организовавший масштабные протесты по всей стране. Вернулся в Россию после отравления, был отправлен за решётку и погиб в колонии в 2024 году.
+                    </div>
+                </div>
+                <div class="grid-columns">
+                    <div class="img-1">
+                        <img  class="img-2" src="img/2019-07-26-478_17355-9_179194-removebg-preview.png" alt="">
+                    </div>
+                    <div class="title-3">
+                        <h1 class="h1-1">
+                            Бенито Муссолини
+                        </h1>
+                    </div>
+                    <div class="desc-1">
+                        <p class="p-2">
+                            Основатель фашизма, захвативший власть в Италии в 1922 году и установивший жесткую диктатуру. Втянул страну во Вторую мировую войну на стороне Гитлера, был свергнут и расстрелян партизанами в 1945 году.
+                    </div>
+                </div>
+                <div class="grid-columns">
+                    <div class="img-1">
+                        <img  class="img-2" src="img/png-transparent-assassination-of-julius-caesar-ancient-rome-roman-republic-roman-empire-others-head-ancient-history-statue-thumbnail-removebg-preview.png" alt="">
+                    </div>
+                    <div class="title-3">
+                        <h1 class="h-1">
+                            Гай Юлий Цезарь 
+                        </h1>
+                    </div>
+                    <div class="desc-1">
+                        <p class="p-2">
+                            Древнеримский полководец, завоевавший Галлию и взявший власть в стране в результате гражданской войны. Став бессрочным диктатором, он положил конец Римской республике и был убит заговорщиками в 44 г. до н. э.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="title-footer">
+            <h4 class="tit">
+                Мемчики
+            </h4>
+        </div>
+        <div class="memchiki">
+            <div class="memchiki-1">
+                <a class="mem" href="https://youtu.be/XfqOB4hvxlY?si=gffOdBWMiwy3Mg6q">
+                    Life could be dream
+                </a>
+                <a class="mem" href="https://youtu.be/3X1NcOUr6Lk?si=GXfbWHCSjxfWFgt3">
+                    Navalniy
+                </a>
+                <a class="mem" href="https://youtu.be/Waxi_6AKwZw?si=txKILFtfYe9nw0KR">
+                    la peace
+                </a>
+                <a class="mem" href="https://youtu.be/9HMTITG1HWw?si=SosA7EqI4hRHvrh_">
+                    neleto
+                </a>
+            </div>
+            <div class="memchiki-2">
+                <a class="mem" href="https://www.youtube.com/shorts/s7NIDgdLMAg?feature=share">
+                    Lasyash
+                </a>
+                <a class="mem" href="https://youtu.be/6hokBoaxAzw?si=flVmrs31hkYHeqCn">
+                    Nektarinky
+                </a>
+                <a class="mem" href="https://youtu.be/dQw4w9WgXcQ?si=Fms72RwU-NF4zgDT">
+                    Free robux
+                </a>
+                <a class="mem" href="https://youtu.be/yN7vvTW-6xA?si=1iU5o4XBP9JU154O">
+                    Morty
+                </a>
+            </div>
+        </div>
+        <div class="bogi">
+            <div class="bog">
+                <p class="bog-01">
+                    Надеюсь
+                </p>
+            </div>
+            <div class="bog">
+                <p class="bog-01">
+                    Все права защищены
+                </p>
+            </div>
+            <div class="bog">
+                <p class="bog-01">
+                    БОГОМ
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
